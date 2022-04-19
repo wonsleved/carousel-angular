@@ -1,0 +1,46 @@
+@import "../config";
+
+.carousel {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border-radius: @radius;
+}
+
+.arrow {
+  display: block;
+  background-color: transparent;
+  outline: none;
+  border-right: none;
+  user-select: none;
+  opacity: 80%;
+  cursor: pointer;
+
+  transition: 0.2s;
+
+  top: calc(50% - @size / 2);
+
+  &:hover, &:focus {
+    opacity: 1;
+  }
+
+  position: absolute;
+
+  border-top: none;
+  border-left: 7px solid white;
+  border-bottom: 7px solid white;
+
+  width: @size;
+  height: @size;
+
+  &._left {
+    transform: rotate(45deg);
+    left: calc(@size / 2);
+  }
+
+  &._right {
+    transform: rotate(225deg);
+    right: calc(@size / 2);
+  }
+}
